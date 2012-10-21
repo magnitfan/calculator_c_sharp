@@ -22,7 +22,7 @@ namespace Calculator
             //Проверяем TextBox1.Text на отсутствие данных и выдаем ошибку
             if (TextBox1.Text == "")
             {
-                MessageBox.Show("Убедитесь в корректности введенных данных!");
+                MessageBox.Show("Введенные данные некорректны!", "Некорректные данные", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
             }
             else
             {
@@ -37,7 +37,7 @@ namespace Calculator
             //Проверяем TextBox1.Text на отсутствие данных и выдаем ошибку
             if (TextBox1.Text == "")
             {
-                MessageBox.Show("Убедитесь в корректности введенных данных!");
+                MessageBox.Show("Введенные данные некорректны!", "Некорректные данные", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
             }
             else
             {
@@ -67,7 +67,7 @@ namespace Calculator
             //Проверяем TextBox1.Text на отсутствие данных и выдаем ошибку
             if (TextBox1.Text == "")
             {
-                MessageBox.Show("Убедитесь в корректности введенных данных!");
+                MessageBox.Show("Введенные данные некорректны!", "Некорректные данные", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
             }
             else
             {
@@ -81,7 +81,7 @@ namespace Calculator
         {
             if (TextBox1.Text == "")
             {
-                MessageBox.Show("Убедитесь в корректности введенных данных!");
+                MessageBox.Show("Введенные данные некорректны!", "Некорректные данные", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
                 CalcRez = 0;
                 TextBox1.Text = "0";
             }
@@ -284,7 +284,7 @@ namespace Calculator
             }
             else
             {
-                MessageBox.Show("В этой версии программы кнопка может использоваться только для удаления цифр из числа. Следите за обновлениями!");
+                MessageBox.Show("В этой версии программы кнопка может использоваться только для удаления цифр из числа. Следите за обновлениями!","Ошибка программы", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
             }
         }
 
@@ -292,11 +292,11 @@ namespace Calculator
         {
             if (TextBox1.Text == "")
             {
-                MessageBox.Show("Убедитесь в корректности введенных данных!");
+                MessageBox.Show("Введенные данные некорректны!", "Некорректные данные", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
             }
             else if (Double.Parse(TextBox1.Text) < 0)
             {
-                MessageBox.Show("Выражение под знаком радикала должно быть неотрицательным!");
+                MessageBox.Show("Выражение под знаком радикала должно быть неотрицательным!", "Некорректные данные", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Exclamation);
             }
             else
             {

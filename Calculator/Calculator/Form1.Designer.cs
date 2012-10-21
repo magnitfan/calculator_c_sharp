@@ -287,7 +287,6 @@
             // 
             // Pred
             // 
-            this.Pred.Enabled = false;
             this.Pred.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Pred.Location = new System.Drawing.Point(150, 286);
             this.Pred.Name = "Pred";
@@ -339,7 +338,7 @@
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.ShowIcon = false;
-            this.Text = "Калькулятор v 0.5.219 (beta)";
+            this.Text = "Калькулятор v 0.6.240 (beta)";
             this.ResumeLayout(false);
             this.PerformLayout();
 
