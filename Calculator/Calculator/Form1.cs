@@ -5,7 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace Calculator
@@ -29,7 +29,6 @@ namespace Calculator
                 CalcRez += Double.Parse(TextBox1.Text);
                 oper = Plus.Text;
                 TextBox1.Text = "";
-                TextBox2.Text += " " + Plus.Text + " ";
             }
         }
 
@@ -45,7 +44,6 @@ namespace Calculator
                 CalcRez += Double.Parse(TextBox1.Text);
                 oper = Minus.Text;
                 TextBox1.Text = "";
-                TextBox2.Text += " " + Minus.Text + " ";
             }
         }    
         
@@ -61,7 +59,6 @@ namespace Calculator
                 CalcRez += Double.Parse(TextBox1.Text);
                 oper = Umn.Text;
                 TextBox1.Text = "";
-                TextBox2.Text += " " + Umn.Text + " ";
             }
         }
 
@@ -77,7 +74,6 @@ namespace Calculator
                 CalcRez += Double.Parse(TextBox1.Text);
                 oper = Del.Text;
                 TextBox1.Text = "";
-                TextBox2.Text += " " + Del.Text + " ";
             }
         }
 
@@ -86,27 +82,32 @@ namespace Calculator
             if (TextBox1.Text == "")
             {
                 MessageBox.Show("Убедитесь в корректности введенных данных!");
+                CalcRez = 0;
+                TextBox1.Text = "0";
             }
             else
             {
                 if (oper == Plus.Text)
                 {
                     CalcRez += Double.Parse(TextBox1.Text);
+                    OperDone = true;
                 }
                 else if (oper == Minus.Text)
                 {
                     CalcRez -= Double.Parse(TextBox1.Text);
+                    OperDone = true;
                 }
                 else if (oper == Umn.Text)
                 {
                     CalcRez *= Double.Parse(TextBox1.Text);
+                    OperDone = true;
                 }
                 else if (oper == Del.Text)
                 {
                     CalcRez /= Double.Parse(TextBox1.Text);
+                    OperDone = true;
                 }
                 TextBox1.Text = CalcRez.ToString();
-                TextBox2.Text += " = " + CalcRez.ToString();
                 oper = "";
             }
         }
@@ -114,157 +115,164 @@ namespace Calculator
         private void Null_Click(object sender, EventArgs e)
         {
             CalcRez = 0;
-            TextBox1.Text = "";
-            TextBox2.Text = "";
+            TextBox1.Text = "0";
+            OperDone = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (TextBox1.Text != "0")
+            if ((TextBox1.Text == "0") || (OperDone == true))
             {
-                TextBox1.Text += 1;
-                TextBox2.Text += 1;
+                TextBox1.Text = "1";
+                OperDone = false;
             }
             else
             {
-                TextBox1.Text = "1";
-                TextBox2.Text = "1";
+                TextBox1.Text += 1;
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (TextBox1.Text != "0")
+            if ((TextBox1.Text == "0") || (OperDone == true))
             {
-                TextBox1.Text += 2;
-                TextBox2.Text += 2;
+                TextBox1.Text = "2";
+                OperDone = false;
             }
             else
             {
-                TextBox1.Text = "2";
-                TextBox2.Text = "2";
+                TextBox1.Text += 2;
             }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (TextBox1.Text != "0")
+            if ((TextBox1.Text == "0") || (OperDone == true))
             {
-                TextBox1.Text += 3;
-                TextBox2.Text += 3;
+                TextBox1.Text = "3";
+                OperDone = false;
             }
             else
             {
-                TextBox1.Text = "3";
-                TextBox2.Text = "3";
+                TextBox1.Text += 3;
             }
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if (TextBox1.Text != "0")
+            if ((TextBox1.Text == "0") || (OperDone == true))
             {
-                TextBox1.Text += 4;
-                TextBox2.Text += 4;
+                TextBox1.Text = "4";
+                OperDone = false;
             }
             else
             {
-                TextBox1.Text = "4";
-                TextBox2.Text = "4";
+                TextBox1.Text += 4;
             }
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            if (TextBox1.Text != "0")
+            if ((TextBox1.Text == "0") || (OperDone == true))
             {
-                TextBox1.Text += 5;
-                TextBox2.Text += 5;
+                TextBox1.Text = "5";
+                OperDone = false;
             }
             else
             {
-                TextBox1.Text = "5";
-                TextBox2.Text = "5";
+                TextBox1.Text += 5;
             }
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            if (TextBox1.Text != "0")
+            if ((TextBox1.Text == "0") || (OperDone == true))
             {
-                TextBox1.Text += 6;
-                TextBox2.Text += 6;
+                TextBox1.Text = "6";
+                OperDone = false;
             }
             else
             {
-                TextBox1.Text = "6";
-                TextBox2.Text = "6";
+                TextBox1.Text += 6;
             }
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            if (TextBox1.Text != "0")
+            if ((TextBox1.Text == "0") || (OperDone == true))
             {
-                TextBox1.Text += 7;
-                TextBox2.Text += 7;
+                TextBox1.Text = "7";
+                OperDone = false;
             }
             else
             {
-                TextBox1.Text = "7";
-                TextBox2.Text = "7";
+                TextBox1.Text += 7;
             }
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            if (TextBox1.Text != "0")
+            if ((TextBox1.Text == "0") || (OperDone == true))
             {
-                TextBox1.Text += 8;
-                TextBox2.Text += 8;
+                TextBox1.Text = "8";
+                OperDone = false;
             }
             else
             {
-                TextBox1.Text = "8";
-                TextBox2.Text = "8";
+                TextBox1.Text += 8;
             }
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
-            if (TextBox1.Text != "0")
+            if ((TextBox1.Text == "0") || (OperDone == true))
             {
-                TextBox1.Text += 9;
-                TextBox2.Text += 9;
+                TextBox1.Text = "9";
+                OperDone = false;
             }
             else
             {
-                TextBox1.Text = "9";
-                TextBox2.Text = "9";
+                TextBox1.Text += 9;
             }
         }
 
         private void buttonPoint_Click(object sender, EventArgs e)
         {
-            TextBox1.Text += ",";
-            TextBox2.Text += ",";
+            if (OperDone == true)
+            {
+                TextBox1.Text = "0,";
+                OperDone = false;
+            }
+            else
+            {
+
+                TextBox1.Text += ",";
+            }
         }
 
         private void button0_Click(object sender, EventArgs e)
         {
-            if (TextBox1.Text != "0")
+            if ((TextBox1.Text != "0") && (OperDone == false))
             {
                 TextBox1.Text += 0;
-                TextBox2.Text += 0;
+            }
+            else
+            {
+                TextBox1.Text = "0";
+                OperDone = false;
             }
         }
 
         private void button000_Click(object sender, EventArgs e)
         {
-            if (TextBox1.Text != "0")
+            if ((TextBox1.Text != "0") && (OperDone == false))
             {
                 TextBox1.Text += "000";
-                TextBox2.Text += "000";
+            }
+            else
+            {
+                TextBox1.Text = "0";
+                OperDone = false;
             }
         }
 
@@ -273,7 +281,6 @@ namespace Calculator
             if (TextBox1.Text != "")
             {
                 TextBox1.Text = TextBox1.Text.Remove(TextBox1.Text.Length - 1, 1);
-                TextBox2.Text = TextBox2.Text.Remove(TextBox2.Text.Length - 1, 1);
             }
             else
             {
@@ -293,18 +300,21 @@ namespace Calculator
             }
             else
             {
-                TextBox2.Text = Sqrt.Text + TextBox2.Text;
                 CalcRez = Math.Sqrt(Double.Parse(TextBox1.Text));
                 TextBox1.Text = CalcRez.ToString();
-                TextBox2.Text += " = " + CalcRez.ToString();
             }
         }
 
         private void Znak_Click(object sender, EventArgs e)
         {
-            CalcRez = -1 * Double.Parse(TextBox1.Text);
-            TextBox1.Text = CalcRez.ToString();
-            TextBox2.Text = TextBox2.Text.Insert(1, "-");
+            if (TextBox1.Text.IndexOf("-") == -1)
+            {
+                TextBox1.Text = "-" + TextBox1.Text;
+            }
+            else
+            {
+                TextBox1.Text = TextBox1.Text.Remove(0, 1);
+            }
         }
     }
 }

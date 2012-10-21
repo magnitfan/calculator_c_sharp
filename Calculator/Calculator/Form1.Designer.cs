@@ -49,7 +49,6 @@
             this.button000 = new System.Windows.Forms.Button();
             this.Sqrt = new System.Windows.Forms.Button();
             this.Stepen = new System.Windows.Forms.Button();
-            this.TextBox2 = new System.Windows.Forms.TextBox();
             this.Pred = new System.Windows.Forms.Button();
             this.Znak = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -57,11 +56,12 @@
             // TextBox1
             // 
             this.TextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.TextBox1.Location = new System.Drawing.Point(12, 284);
+            this.TextBox1.Location = new System.Drawing.Point(12, 12);
             this.TextBox1.Name = "TextBox1";
             this.TextBox1.ReadOnly = true;
             this.TextBox1.Size = new System.Drawing.Size(427, 31);
             this.TextBox1.TabIndex = 0;
+            this.TextBox1.Text = "0";
             this.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Plus
@@ -113,7 +113,7 @@
             this.Ravno.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Ravno.Location = new System.Drawing.Point(289, 223);
             this.Ravno.Name = "Ravno";
-            this.Ravno.Size = new System.Drawing.Size(47, 39);
+            this.Ravno.Size = new System.Drawing.Size(132, 39);
             this.Ravno.TabIndex = 5;
             this.Ravno.Text = "=";
             this.Ravno.UseVisualStyleBackColor = true;
@@ -122,7 +122,7 @@
             // Null
             // 
             this.Null.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Null.Location = new System.Drawing.Point(374, 223);
+            this.Null.Location = new System.Drawing.Point(111, 282);
             this.Null.Name = "Null";
             this.Null.Size = new System.Drawing.Size(47, 39);
             this.Null.TabIndex = 6;
@@ -284,18 +284,9 @@
             this.Stepen.Text = "x^y";
             this.Stepen.UseVisualStyleBackColor = true;
             // 
-            // TextBox2
-            // 
-            this.TextBox2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TextBox2.Location = new System.Drawing.Point(12, 12);
-            this.TextBox2.Name = "TextBox2";
-            this.TextBox2.ReadOnly = true;
-            this.TextBox2.Size = new System.Drawing.Size(427, 32);
-            this.TextBox2.TabIndex = 21;
-            this.TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // Pred
             // 
+            this.Pred.Enabled = false;
             this.Pred.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Pred.Location = new System.Drawing.Point(199, 284);
             this.Pred.Name = "Pred";
@@ -308,7 +299,7 @@
             // Znak
             // 
             this.Znak.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Znak.Location = new System.Drawing.Point(111, 284);
+            this.Znak.Location = new System.Drawing.Point(27, 284);
             this.Znak.Name = "Znak";
             this.Znak.Size = new System.Drawing.Size(47, 37);
             this.Znak.TabIndex = 23;
@@ -323,7 +314,6 @@
             this.ClientSize = new System.Drawing.Size(451, 333);
             this.Controls.Add(this.Znak);
             this.Controls.Add(this.Pred);
-            this.Controls.Add(this.TextBox2);
             this.Controls.Add(this.Stepen);
             this.Controls.Add(this.Sqrt);
             this.Controls.Add(this.button000);
@@ -348,7 +338,7 @@
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.ShowIcon = false;
-            this.Text = "Калькулятор v 0.5.203 (beta)";
+            this.Text = "Калькулятор v 0.5.216 (beta)";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -379,7 +369,7 @@
         private System.Windows.Forms.Button Stepen;
         public double CalcRez = 0;
         public string oper;
-        private System.Windows.Forms.TextBox TextBox2;
+        public bool OperDone = false;
         private System.Windows.Forms.Button Pred;
         private System.Windows.Forms.Button Znak;
     }
