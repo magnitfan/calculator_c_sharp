@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("magnitfan")]
-[assembly: AssemblyProduct("Кадькулятор")]
+[assembly: AssemblyProduct("Калькулятор")]
 [assembly: AssemblyCopyright("Copyright © magnitfan 2012")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // Можно задать все значения или принять номер построения и номер редакции по умолчанию, 
 // используя "*", как показано ниже:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("0.5.216")]
+[assembly: AssemblyVersion("0.5.219")]
 [assembly: AssemblyFileVersion("0.5")]
