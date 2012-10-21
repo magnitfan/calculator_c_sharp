@@ -338,7 +338,7 @@
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.ShowIcon = false;
-            this.Text = "Калькулятор v 0.7.282 (beta)";
+            this.Text = "Калькулятор v 0.7.285 (beta)";
             this.ResumeLayout(false);
             this.PerformLayout();
 
