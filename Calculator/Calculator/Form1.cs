@@ -28,7 +28,8 @@ namespace Calculator
             {
                 CalcRez += Double.Parse(TextBox1.Text);
                 oper = Plus.Text;
-                TextBox1.Text = "";
+                TextBox1.Text += " " + Plus.Text + " ";
+                LengthTextBox = TextBox1.TextLength;
             }
         }
 
@@ -43,7 +44,8 @@ namespace Calculator
             {
                 CalcRez += Double.Parse(TextBox1.Text);
                 oper = Minus.Text;
-                TextBox1.Text = "";
+                TextBox1.Text += " " + Minus.Text + " ";
+                LengthTextBox = TextBox1.TextLength;
             }
         }    
         
@@ -58,7 +60,8 @@ namespace Calculator
             {
                 CalcRez += Double.Parse(TextBox1.Text);
                 oper = Umn.Text;
-                TextBox1.Text = "";
+                TextBox1.Text += " " + Umn.Text + " ";
+                LengthTextBox = TextBox1.TextLength;
             }
         }
 
@@ -73,7 +76,8 @@ namespace Calculator
             {
                 CalcRez += Double.Parse(TextBox1.Text);
                 oper = Del.Text;
-                TextBox1.Text = "";
+                TextBox1.Text += " " + Del.Text + " ";
+                LengthTextBox = TextBox1.TextLength;
             }
         }
 
@@ -89,25 +93,26 @@ namespace Calculator
             {
                 if (oper == Plus.Text)
                 {
-                    CalcRez += Double.Parse(TextBox1.Text);
+                    CalcRez += Double.Parse(TextBox1.Text.Substring(LengthTextBox));
                     OperDone = true;
                 }
                 else if (oper == Minus.Text)
                 {
-                    CalcRez -= Double.Parse(TextBox1.Text);
+                    CalcRez -= Double.Parse(TextBox1.Text.Substring(LengthTextBox));
                     OperDone = true;
                 }
                 else if (oper == Umn.Text)
                 {
-                    CalcRez *= Double.Parse(TextBox1.Text);
+                    CalcRez *= Double.Parse(TextBox1.Text.Substring(LengthTextBox));
                     OperDone = true;
                 }
                 else if (oper == Del.Text)
                 {
-                    CalcRez /= Double.Parse(TextBox1.Text);
+                    CalcRez /= Double.Parse(TextBox1.Text.Substring(LengthTextBox));
                     OperDone = true;
                 }
                 TextBox1.Text = CalcRez.ToString();
+                CalcRez = 0;
                 oper = "";
             }
         }
@@ -316,5 +321,6 @@ namespace Calculator
                 TextBox1.Text = TextBox1.Text.Remove(0, 1);
             }
         }
+
     }
 }

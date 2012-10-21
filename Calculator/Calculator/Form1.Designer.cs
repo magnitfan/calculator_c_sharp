@@ -60,14 +60,14 @@
             this.TextBox1.Multiline = true;
             this.TextBox1.Name = "TextBox1";
             this.TextBox1.ReadOnly = true;
-            this.TextBox1.Size = new System.Drawing.Size(427, 40);
+            this.TextBox1.Size = new System.Drawing.Size(354, 66);
             this.TextBox1.TabIndex = 0;
             this.TextBox1.Text = "0";
-            this.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // Plus
             // 
-            this.Plus.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Plus.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Plus.Location = new System.Drawing.Point(248, 84);
             this.Plus.Name = "Plus";
             this.Plus.Size = new System.Drawing.Size(35, 35);
@@ -78,7 +78,7 @@
             // 
             // Minus
             // 
-            this.Minus.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Minus.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Minus.Location = new System.Drawing.Point(315, 84);
             this.Minus.Name = "Minus";
             this.Minus.Size = new System.Drawing.Size(35, 35);
@@ -89,7 +89,7 @@
             // 
             // Umn
             // 
-            this.Umn.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Umn.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Umn.Location = new System.Drawing.Point(248, 134);
             this.Umn.Name = "Umn";
             this.Umn.Size = new System.Drawing.Size(35, 35);
@@ -100,7 +100,7 @@
             // 
             // Del
             // 
-            this.Del.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Del.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Del.Location = new System.Drawing.Point(315, 134);
             this.Del.Name = "Del";
             this.Del.Size = new System.Drawing.Size(35, 35);
@@ -114,7 +114,7 @@
             this.Ravno.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Ravno.Location = new System.Drawing.Point(248, 235);
             this.Ravno.Name = "Ravno";
-            this.Ravno.Size = new System.Drawing.Size(132, 39);
+            this.Ravno.Size = new System.Drawing.Size(102, 86);
             this.Ravno.TabIndex = 5;
             this.Ravno.Text = "=";
             this.Ravno.UseVisualStyleBackColor = true;
@@ -265,7 +265,7 @@
             // 
             // Sqrt
             // 
-            this.Sqrt.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Sqrt.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Sqrt.Location = new System.Drawing.Point(248, 183);
             this.Sqrt.Name = "Sqrt";
             this.Sqrt.Size = new System.Drawing.Size(35, 35);
@@ -277,7 +277,7 @@
             // Stepen
             // 
             this.Stepen.Enabled = false;
-            this.Stepen.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Stepen.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Stepen.Location = new System.Drawing.Point(315, 183);
             this.Stepen.Name = "Stepen";
             this.Stepen.Size = new System.Drawing.Size(35, 35);
@@ -311,7 +311,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(451, 333);
+            this.ClientSize = new System.Drawing.Size(378, 333);
             this.Controls.Add(this.Znak);
             this.Controls.Add(this.Pred);
             this.Controls.Add(this.Stepen);
@@ -338,7 +338,7 @@
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.ShowIcon = false;
-            this.Text = "Калькулятор v 0.6.240 (beta)";
+            this.Text = "Калькулятор v 0.7.282 (beta)";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -370,6 +370,7 @@
         public double CalcRez = 0;
         public string oper;
         public bool OperDone = false;
+        public int LengthTextBox;
         private System.Windows.Forms.Button Pred;
         private System.Windows.Forms.Button Znak;
     }
