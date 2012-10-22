@@ -276,7 +276,6 @@
             // 
             // Stepen
             // 
-            this.Stepen.Enabled = false;
             this.Stepen.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Stepen.Location = new System.Drawing.Point(315, 183);
             this.Stepen.Name = "Stepen";
@@ -284,6 +283,7 @@
             this.Stepen.TabIndex = 20;
             this.Stepen.Text = "x^y";
             this.Stepen.UseVisualStyleBackColor = true;
+            this.Stepen.Click += new System.EventHandler(this.Stepen_Click);
             // 
             // Pred
             // 
@@ -338,7 +338,7 @@
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.ShowIcon = false;
-            this.Text = "Калькулятор v 0.7.285 (beta)";
+            this.Text = "Калькулятор v 0.8.303";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -371,6 +371,7 @@
         public string oper;
         public bool OperDone = false;
         public int LengthTextBox;
+        public double Osn;
         private System.Windows.Forms.Button Pred;
         private System.Windows.Forms.Button Znak;
     }

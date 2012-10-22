@@ -111,6 +111,15 @@ namespace Calculator
                     CalcRez /= Double.Parse(TextBox1.Text.Substring(LengthTextBox));
                     OperDone = true;
                 }
+                else if (oper == Stepen.Text)
+                {
+                    Osn = CalcRez;
+                    CalcRez = 1;
+                    for (int y = 1; y <= Int32.Parse(TextBox1.Text.Substring(LengthTextBox)); y++)
+                    {
+                        CalcRez *= Osn;
+                    }
+                }
                 TextBox1.Text = CalcRez.ToString();
                 CalcRez = 0;
                 oper = "";
@@ -319,6 +328,22 @@ namespace Calculator
             else
             {
                 TextBox1.Text = TextBox1.Text.Remove(0, 1);
+            }
+        }
+
+        private void Stepen_Click(object sender, EventArgs e)
+        {
+            //Проверяем TextBox1.Text на отсутствие данных и выдаем ошибку
+            if (TextBox1.Text == "")
+            {
+                MessageBox.Show("Введенные данные некорректны!", "Некорректные данные", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+            }
+            else
+            {
+                CalcRez += Double.Parse(TextBox1.Text);
+                oper = Stepen.Text;
+                TextBox1.Text += " ^ ";
+                LengthTextBox = TextBox1.TextLength;
             }
         }
 
