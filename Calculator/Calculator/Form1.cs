@@ -91,38 +91,39 @@ namespace Calculator
             }
             else
             {
+                if ((LengthTextBox !=0) && (TextBox1.Text.Substring(LengthTextBox) != ""))
+                    Oper2 = Double.Parse(TextBox1.Text.Substring(LengthTextBox));
                 if (oper == Plus.Text)
                 {
-                    CalcRez += Double.Parse(TextBox1.Text.Substring(LengthTextBox));
+                    CalcRez += Oper2;
                     OperDone = true;
                 }
                 else if (oper == Minus.Text)
                 {
-                    CalcRez -= Double.Parse(TextBox1.Text.Substring(LengthTextBox));
+                    CalcRez -= Oper2;
                     OperDone = true;
                 }
                 else if (oper == Umn.Text)
                 {
-                    CalcRez *= Double.Parse(TextBox1.Text.Substring(LengthTextBox));
+                    CalcRez *= Oper2;
                     OperDone = true;
                 }
                 else if (oper == Del.Text)
                 {
-                    CalcRez /= Double.Parse(TextBox1.Text.Substring(LengthTextBox));
+                    CalcRez /= Oper2;
                     OperDone = true;
                 }
                 else if (oper == Stepen.Text)
                 {
                     Osn = CalcRez;
                     CalcRez = 1;
-                    for (int y = 1; y <= Int32.Parse(TextBox1.Text.Substring(LengthTextBox)); y++)
+                    for (int y = 1; y <= Oper2; y++)
                     {
                         CalcRez *= Osn;
                     }
                 }
                 TextBox1.Text = CalcRez.ToString();
-                CalcRez = 0;
-                oper = "";
+                LengthTextBox = 0;
             }
         }
 
@@ -276,7 +277,7 @@ namespace Calculator
                 OperDone = false;
             }
         }
-
+      
         private void button000_Click(object sender, EventArgs e)
         {
             if ((TextBox1.Text != "0") && (OperDone == false))
@@ -292,13 +293,20 @@ namespace Calculator
 
         private void Pred_Click(object sender, EventArgs e)
         {
-            if (TextBox1.Text != "")
+            if (TextBox1.Text != "0")
             {
-                TextBox1.Text = TextBox1.Text.Remove(TextBox1.Text.Length - 1, 1);
+                if (Char.ToString(TextBox1.Text.ElementAt(TextBox1.TextLength - 1)) != " ")
+                {
+                    TextBox1.Text = TextBox1.Text.Remove(TextBox1.Text.Length - 1, 1);
+                }
+                else
+                {
+                    MessageBox.Show("В этой версии программы кнопка может использоваться только для удаления цифр из числа. Следите за обновлениями!", "Ошибка программы", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+                }
             }
             else
             {
-                MessageBox.Show("В этой версии программы кнопка может использоваться только для удаления цифр из числа. Следите за обновлениями!","Ошибка программы", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+                MessageBox.Show("В этой версии программы кнопка может использоваться только для удаления цифр из числа. Следите за обновлениями!", "Ошибка программы", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
             }
         }
 
@@ -321,13 +329,13 @@ namespace Calculator
 
         private void Znak_Click(object sender, EventArgs e)
         {
-            if (TextBox1.Text.IndexOf("-") == -1)
+            if (TextBox1.Text.Substring(LengthTextBox).IndexOf("-") == -1)
             {
-                TextBox1.Text = "-" + TextBox1.Text;
+                TextBox1.Text = TextBox1.Text.Insert(LengthTextBox, "-");
             }
             else
             {
-                TextBox1.Text = TextBox1.Text.Remove(0, 1);
+                TextBox1.Text = TextBox1.Text.Remove(LengthTextBox, 1);
             }
         }
 
@@ -346,6 +354,5 @@ namespace Calculator
                 LengthTextBox = TextBox1.TextLength;
             }
         }
-
     }
 }
